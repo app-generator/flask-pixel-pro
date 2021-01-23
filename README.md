@@ -1,20 +1,23 @@
 # [Flask Pixel PRO](https://appseed.us/apps/flask-apps/flask-pixel-uikit-pro)
 
-> Commercial product - Flask Web Application coded on top of Pixel PRO UI Kit crafted by Themesberg.
+**Flask App** coded with basic modules, database, ORM and deployment scripts on top of **Pixel PRO** (premium version), a modern Bootstrap dashboard design. Pixel Pro is a premium Bootstrap 5 UI Kit without jQuery featuring over 1000 components, 50+ sections and 35 example pages including a fully fledged user dashboard.
 
-## Features
+<br />
+
+> Product Features
 
 - UI-Ready, Jinja2 templating
 - SQLite database, Flask-SQLAlchemy ORM
-- Session-Based auth flow (login, register)
-- UI Kit: **Pixel PRO UI Kit** by **Themesberg**
-- **Commercial License**
-- **24/7 Live Support** via [Discord](https://discord.gg/fZC6hup) and eMail < *support@appseed.us* >
+- Session-Based authentication (via **flask_login**), Forms validation
+- Deployment scripts: Docker, Gunicorn / Nginx, Heroku
+- Support via **Github** (issues tracker) and [Discord](https://discord.gg/fZC6hup).
+
+<br />
 
 > Links
 
-- LIVE Demo: [Flask Pixel PRO](https://flask-pixel-uikit-pro.appseed.us/)
-- Product Page: [Flask Pixel PRO](https://appseed.us/apps/flask-apps/flask-pixel-uikit-pro)
+- [Flask Pixel PRO](https://appseed.us/apps/flask-apps/flask-pixel-uikit-pro) - product page
+- [Flask Pixel PRO - Demo](https://flask-pixel-pro.appseed-srv1.com/) - LIVE deployment
 
 <br />
 
@@ -26,8 +29,8 @@
 
 ```bash
 $ # Clone the sources
-$ git clone https://github.com/app-generator/priv-flask-pixel-uikit-pro.git
-$ cd priv-flask-pixel-uikit-pro
+$ git clone https://github.com/app-generator/priv-flask-pixel-pro.git
+$ cd priv-flask-pixel-pro
 $
 $ # Virtualenv modules installation (Unix based systems)
 $ virtualenv env
