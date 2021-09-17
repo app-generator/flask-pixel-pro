@@ -6,6 +6,8 @@
 
 > Product Features
 
+- Up-to-date [dependencies](./requirements.txt): **Flask 2.0.1**
+- [SCSS compilation](#recompile-css) via **Gulp**
 - UI-Ready, Jinja2 templating
 - SQLite database, Flask-SQLAlchemy ORM
 - Session-Based authentication (via **flask_login**), Forms validation
@@ -71,44 +73,50 @@ The project has a super simple structure, represented as bellow:
 
 ```bash
 < PROJECT ROOT >
-    |
-    |--- app/__init__.py
-    |--- app/
-    |     | --- <static/assets>
-    |     |         |
-    |     |         |--- <css>
-    |     |         |--- <Js>
-    |     |         |--- <img>
-    |     |
-    |     | --- <templates>
-    |     |         |
-    |     |         |---<includes>                     # Page chunks, components
-    |     |         |       |
-    |     |         |       | --- navigation.html      # Top bar
-    |     |         |       | --- sidebar.html         # Left sidebar
-    |     |         |       | --- scripts.html         # JS scripts common to all pages
-    |     |         |       | --- footer.html          # The common footer
-    |     |         |
-    |     |         |---<layouts>                      # App Layouts (the master pages)
-    |     |         |       |
-    |     |         |       | --- base.html            # Used by common pages like index, UI
-    |     |         |       | --- base-fullscreen.html # Used by auth pages (login, register)
-    |     |         |
-    |     |         |---<accounts>                     # Auth Pages (login, register)
-    |     |         |       |
-    |     |         |       | --- login.html           # Use layout `base-fullscreen.html`
-    |     |         |       | --- register.html        # Use layout `base-fullscreen.html`  
-    |     |         |
-    |     |     index.html                             # The default page
-    |     |     page-404.html                          # Error 404 page (page not found)
-    |     |     page-500.html                          # Error 500 page (server error)
-    |     |       *.html                               # All other pages provided by the UI Kit
-    |
-    |--- requirements.txt
-    |
-    |--- run.py
-    |
-    |-----------------------------
+   |
+   |-- app/
+   |    |-- static/
+   |    |    |-- <css, JS, images>         # CSS files, Javascripts files
+   |    |
+   |    |-- templates/
+   |    |    |
+   |    |    |-- includes/                 # Page chunks, components
+   |    |    |    |
+   |    |    |    |-- navigation.html      # Top bar
+   |    |    |    |-- sidebar.html         # Left sidebar
+   |    |    |    |-- scripts.html         # JS scripts common to all pages
+   |    |    |    |-- footer.html          # The common footer
+   |    |    |
+   |    |    |-- layouts/                  # App Layouts (the master pages)
+   |    |    |    |
+   |    |    |    |-- base.html            # Used by common pages like index, UI
+   |    |    |    |-- base-fullscreen.html # Used by auth pages (login, register)
+   |    |    |
+   |    |    |-- accounts/                 # Auth Pages (login, register)
+   |    |    |    |
+   |    |    |    |-- login.html           # Use layout `base-fullscreen.html`
+   |    |    |    |-- register.html        # Use layout `base-fullscreen.html`  
+   |    |    |
+   |    |    |-- home/                      # UI Kit Pages
+   |    |         |-- index.html            # Index page
+   |    |         |-- 404-page.html         # 404 page
+   |    |         |-- *.html                # All other pages
+   |    |
+   |   config.py                            # Provides APP Configuration 
+   |   forms.py                             # Defines Forms (login, register) 
+   |   models.py                            # Defines app models 
+   |   views.py                             # Application Routes 
+   |
+   |-- Dockerfile                           # Deployment
+   |-- docker-compose.yml                   # Deployment
+   |-- gunicorn-cfg.py                      # Deployment   
+   |-- nginx                                # Deployment
+   |    |-- appseed-app.conf                # Deployment 
+   |
+   |-- requirements.txt
+   |-- run.py
+   |
+   |-- ************************************************************************
 ```
 
 <br />
@@ -153,6 +161,34 @@ $ gulp
 ```
 
 The generated files (css, min.css) are saved in `static/assets/css` directory.
+
+<br />
+
+## Deployment
+
+The app is provided with a basic configuration to be executed in [Docker](https://www.docker.com/), [Heroku](https://www.heroku.com/), [Gunicorn](https://gunicorn.org/), and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/).
+
+<br />
+
+### [Docker](https://www.docker.com/) execution
+---
+
+The application can be easily executed in a docker container. The steps:
+
+> Get the code
+
+```bash
+$ git clone https://github.com/app-generator/flask-pixel-lite.git
+$ cd flask-pixel-lite
+```
+
+> Start the app in Docker
+
+```bash
+$ sudo docker-compose pull && sudo docker-compose build && sudo docker-compose up -d
+```
+
+Visit `http://localhost:85` in your browser. The app should be up & running.
 
 <br />
 
