@@ -4,9 +4,9 @@
 
 <br />
 
-> Product Features
+> Features
 
-- Up-to-date [dependencies](./requirements.txt): **Flask 2.0.1**
+- `Up-to-date dependencies`: **Flask 2.0.1**
 - [SCSS compilation](#recompile-css) via **Gulp**
 - UI-Ready, Jinja2 templating
 - SQLite database, Flask-SQLAlchemy ORM
