@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.6] 2022-6-13
+### Improvements
+
+- Built with [Pixel Pro Generator](https://appseed.us/generator/pixel-bootstrap-pro/)
+  - Timestamp: `2022-06-13 19:45`
+
 ## [1.0.5] 2022-04-01
 ### Fixes
 
