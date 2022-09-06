@@ -1,6 +1,24 @@
 # Change Log
 
-## [1.0.6] 2022-6-13
+## [1.0.8] 2022-09-06
+### Improvements
+
+- Improved Authentication
+  - Visual password strength indicator (registration)  
+  - **Social Login**: `Github` & `Twitter`
+- New Feature: `User Profiles`
+  - `Extended User` profile
+  - `Self-Deletion` option
+- Improved `Docker` Scripts  
+
+## [1.0.7] 2022-08-30
+### Improvements
+
+- Refactoring User Dashboard
+  - `dashboard-settings.html` 
+  - `dashboard-security.html`
+
+## [1.0.6] 2022-06-13
 ### Improvements
 
 - Built with [Pixel Pro Generator](https://appseed.us/generator/pixel-bootstrap-pro/)
